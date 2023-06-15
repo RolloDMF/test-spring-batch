@@ -26,13 +26,13 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
         if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
             log.info("!!! JOB FINISHED! Time to verify the results");
 
-            jdbcTemplate.query("SELECT first_name, last_name, birthday, age FROM people",
+            /*jdbcTemplate.query("SELECT first_name, last_name, birthday, age FROM people",
                     (rs, row) -> new Person(
                             rs.getString(1),
                             rs.getString(2),
                             rs.getString(3),
                             rs.getInt(4))
-            ).forEach(person -> log.info("Found <{{}}> in the database.", person));
+            ).forEach(person -> log.info("Found <{{}}> in the database.", person));*/
         }
     }
 }

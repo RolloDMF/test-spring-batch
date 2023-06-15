@@ -60,7 +60,7 @@ public class BatchConfiguration {
     public Step step1(JobRepository jobRepository,
                       PlatformTransactionManager transactionManager, JdbcBatchItemWriter<Person> writer) {
         return new StepBuilder("step1", jobRepository)
-                .<Person, Person> chunk(10, transactionManager)
+                .<Person, Person> chunk(10000, transactionManager)
                 .reader(reader())
                 .processor(processor())
                 .writer(writer)

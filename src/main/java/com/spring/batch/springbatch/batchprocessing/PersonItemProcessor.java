@@ -24,7 +24,7 @@ public class PersonItemProcessor implements ItemProcessor<Person, Person> {
 
         final Person transformedPerson = new Person(firstName, lastName, birthday, age);
 
-        log.info("Converting (" + person + ") into (" + transformedPerson + ")");
+        //log.info("Converting (" + person + ") into (" + transformedPerson + ")");
 
         return transformedPerson;
     }

@@ -1,0 +1,51 @@
+# Made by OSU
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_TLS_CERTDIR: ""
+
+stages:          # List of stages for jobs, and their order of execution
+  - build-stage
+  - release-stage
+
+.build-artifacts:
+  artifacts:
+    expose_as: "build"
+    name: "build-artifacts"
+    paths:
+      - target/
+    expire_in: 10 mins
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build-stage
+  image: maven:3-openjdk-17
+  extends: .build-artifacts
+  script: mvn clean package -DskipTests
+  tags:
+    - docker
+
+release-job:
+  stage: release-stage
+  services:
+    - name: docker:20.10.16-dind
+      command:
+        - /bin/sh
+        - -c
+        - echo "$CA_CERTIFICATES_LOCAL" > /usr/local/share/ca-certificates/my-ca.crt && update-ca-certificates && dockerd-entrypoint.sh || exit
+  variables:
+    DOCKER_TAG: "latest"
+    DOCKERFILE_PATH: './Dockerfile'
+    DOCKER_IMAGE: "demo-java"
+    DOCKER_NAMESPACE: "docker-apicil-sp"
+    DOCKER_IMAGE_PATH: "${DOCKER_NAMESPACE}/${DOCKER_IMAGE}"
+    DOCKER_HUB_IMAGE: '${CI_REGISTRY_EXTERNE}/${DOCKER_IMAGE_PATH}'
+    CA_CERTIFICATES_LOCAL: '${CA_CERTIFICATES}'
+  needs:
+    - build-job
+  before_script:
+    - docker info
+  script:
+    - docker build . -t ${DOCKER_HUB_IMAGE}:${DOCKER_TAG} -f ${DOCKERFILE_PATH}
+    - echo "$CI_REGISTRY_EXTERNE_PASSWORD" | docker login -u "$CI_REGISTRY_EXTERNE_USER" --password-stdin "$CI_REGISTRY_EXTERNE"
+    - docker push ${DOCKER_HUB_IMAGE}:${DOCKER_TAG}
+  tags:
+    - docker-dind

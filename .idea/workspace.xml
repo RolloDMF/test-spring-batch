@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db06801f-4649-4ba9-8da6-d046abd9b94c" name="Changes" comment="" />
+    <list default="true" id="db06801f-4649-4ba9-8da6-d046abd9b94c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/batch/springbatch/batchprocessing/BatchConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/batch/springbatch/batchprocessing/BatchConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/batch/springbatch/batchprocessing/JobCompletionNotificationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/batch/springbatch/batchprocessing/JobCompletionNotificationListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spring/batch/springbatch/batchprocessing/PersonItemProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spring/batch/springbatch/batchprocessing/PersonItemProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sample-data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sample-data.csv" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +24,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/openjdk-20.0.1/lib/src.zip!/java.base/java/lang/NullPointerException.java" root0="FORCE_HIGHLIGHTING" />
@@ -32,6 +43,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2QkcWKbVfPHwfR5eM4lgsJn3uJu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="flattenPackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,10 +51,14 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/rollo/dev/springbatch&quot;
+    &quot;last_opened_file_path&quot;: &quot;/home/rollo/dev/springbatch&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="BatchProcessingApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.spring.batch.springbatch.batchprocessing.BatchProcessingApplication" />
       <module name="springbatch" />
@@ -56,8 +72,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Application.BatchProcessingApplication" />
       </list>
     </recent_temporary>
